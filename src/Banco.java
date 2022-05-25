@@ -1,9 +1,22 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Banco {
 
 	private String nome;
-	private List<Conta> contas;
+	private List<Cliente> listaClientes;
+
+	public void adicionarCliente(String nome) {
+		listaClientes.add(new Cliente(nome));
+	}
+
+	public List<Cliente> getListaCliente() {
+		return this.listaClientes;
+	}
+
+	public void setListaCliente(List<Cliente> listaCliente) {
+		this.listaClientes = listaCliente;
+	}
 
 	public String getNome() {
 		return nome;
@@ -12,16 +25,18 @@ public class Banco {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	public List<Conta> getContas() {
-		return contas;
+
+
+	public Banco(String nome, List<Conta> listaContas, List<Cliente> listaClientes) {
+		this.nome = nome;
+		this.listaClientes = listaClientes;
 	}
-	
-	public void setContas(List<Conta> contas) {
-		this.contas = contas;
-		
+
+	public Banco() {
+		this.nome = "Banco Java Dio";
+		this.listaClientes = new ArrayList<>();
 	}
-		
+
 }
 
 
